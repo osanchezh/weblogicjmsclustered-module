@@ -1,3 +1,7 @@
+# @author: Sanchez Huerta Octavio
+# @email: osanchezhuerta@gmail.com
+# @homepage: https://zeosaho.blogspot.com
+
 import sys
 from java.io import FileInputStream
 from java.util import Properties
@@ -7,17 +11,15 @@ def loadProperties(fileName):
 	input = FileInputStream(fileName)
 	properties.load(input)
 	input.close()
-
 	result= {}
 	for entry in properties.entrySet(): result[entry.key] = entry.value
-
 	return result
 
 ruta_propiedades=sys.argv[1]
 if not ruta_propiedades:
-  			print 'No se logro cargar el archivo de configuracion'
+  			print 'Configuration file was not found at the args parameters.'
 else:
-     print 'Carga del archivo: '+ruta_propiedades
+     print 'File to load: '+ruta_propiedades
 
 properties = loadProperties(ruta_propiedades)
 
@@ -97,7 +99,7 @@ adminServerName = cmo.adminServerName
 
 try:
 
-	print "SAT - SIAT - PyD-Planificador"
+	print "**WEBLOGIC 11G **"
 	domainName = cmo.name
 	cd("Servers/%s" % adminServerName)
 	adminServer = cmo
@@ -574,7 +576,7 @@ try:
 	endTransaction()
 
 except:
-	print "ocurrio un error"
+	print "ERROR ON THE EXECUTION:"
 	dumpStack()
 	cancelEdit("y")
 	#raise
