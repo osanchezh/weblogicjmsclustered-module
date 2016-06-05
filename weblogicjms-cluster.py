@@ -1,6 +1,6 @@
 # @author: Sanchez Huerta Octavio
 # @email: osanchezhuerta@gmail.com
-# @homepage: https://zeosaho.blogspot.com
+# @homepage: https://codefixes.blogspot.com
 
 import sys
 from java.io import FileInputStream
